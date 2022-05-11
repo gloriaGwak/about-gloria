@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Gloria working as FE based in Seoul.
+- 👋 Hi, I’m Gloria studying programing based in Seoul.
 - 🌱 I’m currently learning Modern JS, VUE, react.js
 - 📫 How to reach me : send me e-mail to gloria.hh.gwak@gmail.com
 
