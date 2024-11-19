@@ -1,5 +1,5 @@
-- 👋 Hi, I’m Gloria studying programing based in Seoul.
-- 🌱 I’m currently learning Modern JS, react.js
+- 👋 Hi, I’m Gloria based in Sydney.
+- 🌱 I’m currently learning Modern JS, react.js, also Node Js.
 - 📫 How to reach me : send me e-mail to gloria.hh.gwak@gmail.com
 
 <!---
