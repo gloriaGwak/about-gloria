@@ -7,9 +7,10 @@ module.exports = {
       // bebas: ['Bebas Neue', 'sans-serif'],
     },
     screens: {
-      // sm: "0px",
-      // md: "768px",
-      // lg: "1024px",
+      sm: "0px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1400px",
     },
     extend: {
     },
