@@ -6,6 +6,43 @@
 /* html.dark body{
   @apply bg-zinc-800 text-gray-50;
 } */
+/* 
+Ivory
+#f4f7f0
+
+Misty Blue
+#bfd2d0
+
+Teal Green
+#368980
+
+Aqua
+#62ccc0 */
+
+/* Cyan
+#2b6670
+
+Slate
+#637e90
+
+Blue Gray
+#77a7b0
+
+Baby Blue
+#e5f2f0 */
+
+
+/* Charcoal
+#23424a
+
+Aquamarine
+#65a9a6
+
+White
+#ececeb
+
+Teal
+#3b707d */
 
 body {
   margin: 0;
@@ -16,7 +53,8 @@ body {
   height: 100%;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #333;
+  color: #23424a;
+  background: #ececeb;
   /* @apply min-w-[300px];
   @apply flex flex-col items-center;
   @apply bg-white text-gray-700; */

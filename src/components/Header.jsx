@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { TbBrandGithubFilled, TbBrandLinkedinFilled } from "react-icons/tb";
+
 
 export default function Header() {
     return (
@@ -25,10 +28,24 @@ export default function Header() {
                     I thrive on new challenges and <br className='lg:block hidden'/>find joy in turning creative ideas into reality.
                 </p>
                 <ul className='
-                    flex gap-4 mt-2
+                    flex gap-4 mt-4
                 '>
-                    <li>깃허브</li>
-                    <li>링크드인</li>
+                    <li className='
+                        md:w-[35px] md:h-[35px]
+                        w-[30px] h-[30px]
+                    '>
+                        <Link to='/' target='_blank' title='Go to new window' className='block w-full h-full'>
+                            <TbBrandGithubFilled className='w-full h-full' /><span className='blind'>GitHub</span>
+                        </Link>
+                    </li>
+                    <li className='
+                        md:w-[35px] md:h-[35px]
+                        w-[30px] h-[30px]
+                    '>
+                        <Link to='/' target='_blank' title='Go to new window' className='block w-full h-full'>
+                            <TbBrandLinkedinFilled className='w-full h-full' /><span className='blind'>LinkedIn</span>
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <nav className='
