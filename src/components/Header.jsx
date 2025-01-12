@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { TbBrandGithubFilled, TbBrandLinkedinFilled } from "react-icons/tb";
 
 
@@ -14,7 +13,7 @@ export default function Header() {
             relative py-16
         '>
             <div>
-                <h1 className='font-bold md:text-5xl text-4xl'>Gloria Gwak</h1>
+                <h1 className='font-bangers font-bold md:text-5xl text-4xl'>Gloria Gwak</h1>
                 <h2 className='
                     md:mt-3 md:text-xl text-lg
                     font-medium mt-2
