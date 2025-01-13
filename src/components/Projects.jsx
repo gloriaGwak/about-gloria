@@ -3,7 +3,10 @@ import SectionTitle from './ui/SectionTitle';
 
 export default function Projects() {
     return (
-        <section>
+        <section 
+            id='projects' 
+            className='pt-16 lg:pt-24'
+        >
             <SectionTitle text={'Projects'} />
             <ul>
                 <li className='flex gap-4'>

@@ -6,8 +6,8 @@ import CareerBackground from './CareerBackground';
 export default function Main() {
     return (
         <main className='
-            flex flex-col gap-16 pb-16
-            lg:py-24 lg:gap-24
+            pb-16
+            lg:pb-24
         '>
             <About />
             <Projects />

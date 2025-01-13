@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { TbBrandGithubFilled, TbBrandLinkedinFilled } from "react-icons/tb";
 
 
+const navList = ['about', 'projects', 'background', 'contact'];
 export default function Header() {
+    const [active, setActive] = useState(navList[0]);
+
     return (
         <header className='
             flex 
@@ -52,18 +56,11 @@ export default function Header() {
                 hidden
             '>
                 <ul>
-                    <li>
-                        <button type='button'>About</button>
-                    </li>
-                    <li>
-                        <button type='button'>Projects</button>
-                    </li>
-                    <li>
-                        <button type='button'>Career Background</button>
-                    </li>
-                    <li>
-                        <button type='button'>Contact</button>
-                    </li>
+                    {navList.map((value, index) => 
+                        <li key={value} className='capitalize'>
+                            <HashLink to={`#${value}`} smooth>{value}</HashLink>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </header>

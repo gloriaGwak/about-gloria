@@ -3,10 +3,13 @@ import SectionTitle from './ui/SectionTitle';
 
 export default function About() {
     return (
-        <section>
+        <section 
+            id='about' 
+            className='pt-16 lg:pt-24'
+        >
             <SectionTitle text={'About'} />
             <p>
-                <span className='block lg:mt-10 mt-6'>
+                <span className='block'>
                     I am a frontend developer passionate about creating fast, user-friendly, visually appealing, and accessible websites. I embrace new challenges, enjoy the process of building, and collaborate effectively to propose better solutions.
                 </span>
                 <span className='block lg:mt-10 mt-6'>
