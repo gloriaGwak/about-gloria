@@ -20,12 +20,12 @@ export default function CareerList({filter}) {
                     <li key={idx} className="mt-12 first:mt-0">
                         <div>
                             <strong className="inline-block align-middle">
-                                {career.filter === "education" && (
+                                {career.category === "education" && (
                                     <PiCertificate className="inline-block w-[25px] h-[25px] mr-1 align-middle" />
                                 )}
-                                {career.careerName}
+                                <span className="inline-block">{career.title}</span>
                             </strong>
-                            <span className="block">{career.title}</span>
+                            <span className="block">{career.careerName}</span>
                             <span className="block">{career.date}</span>
                             <p>{career.description}</p>
                         </div>
@@ -43,5 +43,5 @@ function getFilteredItems(careers, filter){
     if(filter === 'all'){
         return careers;
     }
-    return careers.filter((career) => career.filter === filter);
+    return careers.filter((career) => career.category === filter);
 }

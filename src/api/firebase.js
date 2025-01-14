@@ -28,27 +28,30 @@ const database = getDatabase();
 //         return [];
 //     })
 // }
-export async function getCareers (){
+export async function getProjects (){
     try {
-        const snapshot = await get(ref(database, 'careers'));
+        const snapshot = await get(ref(database, 'projects'));
         if (snapshot.exists()) {
-            // console.log("Data retrieved:", snapshot.val());
             return Object.values(snapshot.val()); // Return value if data exists
         } else {
-            // console.log("No data available at 'careers'");
             return []; // Return empty array if data does not exists
         }
     } catch (error) {
         console.error("Error fetching data:", error);
         return []; // Return empty array if error occured 
     }
+}
 
-    // return get(ref(database, 'careers'))
-    // .then((snapshot) => {
-        // console.log(snapshot)
-        // if(snapshot.exists()){
-        //     return Object.values(snapshot.val());
-        // }
-        // return [];
-    // })
+export async function getCareers (){
+    try {
+        const snapshot = await get(ref(database, 'careers'));
+        if (snapshot.exists()) {
+            return Object.values(snapshot.val()); // Return value if data exists
+        } else {
+            return []; // Return empty array if data does not exists
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return []; // Return empty array if error occured 
+    }
 }

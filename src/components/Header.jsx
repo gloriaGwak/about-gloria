@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { TbBrandGithubFilled, TbBrandLinkedinFilled } from "react-icons/tb";
 
 
 const navList = ['about', 'projects', 'background', 'contact'];
-export default function Header() {
+export default function Header({sectionRefs, currentSection}) {
     const [active, setActive] = useState(navList[0]);
+    const location = useLocation();
+    
+    const scrollToSection = (target,index) => {
+        if (sectionRefs.current[index]) {
+            sectionRefs.current[index].scrollIntoView({ behavior: 'smooth' });
+            setActive(target);
+        }
+    };
+    
+    useEffect(() => {
+    }, [active]);
 
     return (
         <header className='
@@ -51,18 +62,41 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-            <nav className='
-                lg:block
-                hidden
-            '>
-                <ul>
-                    {navList.map((value, index) => 
-                        <li key={value} className='capitalize'>
-                            <HashLink to={`#${value}`} smooth>{value}</HashLink>
-                        </li>
-                    )}
-                </ul>
-            </nav>
+            
+            {location.pathname !== '/projects' && (
+                <nav className='
+                    lg:block
+                    hidden
+                '>
+                    <ul>
+                        {navList.map((value, index) => 
+                            <li 
+                                key={value}
+                                onClick={() => scrollToSection(value,index)}
+                                className={`${currentSection === value && 'font-bold'}`}
+                            >
+                                <button 
+                                    className='capitalize'
+                                    type='button'
+                                >
+                                    {value}
+                                </button>
+                                {/* <HashLink 
+                                    className={`capitalize ${active === value && 'font-bold'}`}
+                                    // onClick={() => handleActive(value)}
+                                    to={`#${value}`} 
+                                    smooth
+                                >
+                                        {value}
+                                </HashLink> */}
+                            </li>
+                        )}
+                    </ul>
+                </nav>
+            )}
+            {location.pathname == '/projects' && (
+                <Link to='/'>Go to Home</Link>
+            )}
         </header>
     );
 }

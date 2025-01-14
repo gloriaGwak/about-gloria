@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import SectionTitle from './ui/SectionTitle';
-import CareerFilter from './CareerFilter';
+import Filter from './ui/Filter';
 import CareerList from './ui/CareerList';
 
 
 const filters = ['all', 'experience', 'education'];
-export default function CareerBackground() {
+export default function SectionCareer({ref}) {
     const [filter, setFilter] = useState(filters[0]);
     return (
         <section 
+            ref={ref}
             id='background' 
             className='pt-16 lg:pt-24'
         >
             <SectionTitle text={'Career Background'} />
-            <CareerFilter filters={filters} filter={filter} onFilterChange={setFilter} />
+            <Filter filters={filters} filter={filter} onFilterChange={setFilter} />
             <CareerList filter={filter} />
         </section>
     );

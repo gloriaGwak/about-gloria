@@ -56,6 +56,7 @@ body {
   line-height: 1.5rem;
   color: #23424a;
   background: #ececeb;
+  @apply bg-gray text-charcoal;
   /* @apply min-w-[300px];
   @apply flex flex-col items-center;
   @apply bg-white text-gray-700; */
@@ -125,15 +126,15 @@ code, kbd, samp, pre {
   width: 0.5rem;
 }
 ::-webkit-scrollbar-track{
-  @apply bg-gray-200;
+  @apply bg-mistyBlue;
   @apply rounded-2xl;
 }
 ::-webkit-scrollbar-thumb{
-  @apply bg-gray-500;
+  @apply bg-charcoal;
   @apply rounded-2xl;
 }
 ::-webkit-scrollbar-thumb:hover{
-  @apply bg-gray-600;  
+  /* @apply bg-charcoal;   */
 }
 
 textarea {

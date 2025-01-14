@@ -1,9 +1,10 @@
 import React from 'react';
 import SectionTitle from './ui/SectionTitle';
 
-export default function About() {
+export default function SectionAbout({ ref }) {
     return (
         <section 
+            ref={ref}
             id='about' 
             className='pt-16 lg:pt-24'
         >
