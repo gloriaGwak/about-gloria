@@ -12,12 +12,7 @@ export default function App() {
   const sectionRefs = useRef([]);
   const [currentSection, setCurrentSection] = useState('about');
   const location = useLocation();
-  
-  useEffect(() => {
-    if (!Array.isArray(sectionRefs.current)) {
-      sectionRefs.current = [];
-    }
-  }, []);
+  const path = location.pathname;
 
   const handleScrollToTop = () => {
     window.scrollTo({top: 0});
@@ -35,6 +30,9 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (!Array.isArray(sectionRefs.current)) {
+      sectionRefs.current = [];
+    }
     // put scroll on top once page is rendered
     handleScrollToTop();
     // add scroll event
@@ -50,23 +48,10 @@ export default function App() {
   }, []);
   return (
     <QueryClientProvider client={queryClient}>
-      <div
-        className="
-          flex 
-          lg:justify-between lg:gap-4 lg:flex-row lg:px-6
-          md:px-12
-          sm:px-6
-          flex-col
-          max-w-screen-xl mx-auto md:px-16
-        "
-      >
-        
-        <Header sectionRefs={sectionRefs} currentSection={currentSection} />
-        {/* <Header sectionRefs={sectionRefs} currentSection={currentSection} /> */}
-        <div className="lg:w-[calc(60%-1rem)] w-full">
-          <Outlet context={{ sectionRefs }} />
-          <Footer />
-        </div>
+      <div className={`wrap lg:px-6 md:px-12 px-6 ${path !== '/projects' ? 'flex lg:justify-between lg:gap-4 lg:flex-row flex-col flex-wrap' : 'block'}`}>
+        <Header sectionRefs={sectionRefs} currentSection={currentSection} path={path} />
+        <Outlet context={{ sectionRefs }} path={path} />
+        <Footer path={path} />
       </div>
     </QueryClientProvider>
   );

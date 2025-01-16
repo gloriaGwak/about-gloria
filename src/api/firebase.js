@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getDatabase, get, ref } from "firebase/database"; 
+import { getDatabase, get, set, ref } from "firebase/database"; 
+import { v4 as uuid } from 'uuid';
 
 
 const firebaseConfig = {
@@ -54,4 +55,16 @@ export async function getCareers (){
         console.error("Error fetching data:", error);
         return []; // Return empty array if error occured 
     }
+}
+
+export async function makeInquirie(inquirie){
+    const id = uuid();
+    
+    return set(ref(database, `inquiries/${uuid()}`), {
+        ...inquirie,
+        id,
+        name: inquirie.name,
+        email: inquirie.email,
+        message: inquirie.message
+    });
 }

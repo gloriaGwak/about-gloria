@@ -54,7 +54,6 @@ body {
   height: 100%;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #23424a;
   background: #ececeb;
   @apply bg-gray text-charcoal;
   /* @apply min-w-[300px];
@@ -135,6 +134,10 @@ code, kbd, samp, pre {
 }
 ::-webkit-scrollbar-thumb:hover{
   /* @apply bg-charcoal;   */
+}
+
+.wrap{
+  @apply max-w-screen-xl mx-auto;
 }
 
 textarea {

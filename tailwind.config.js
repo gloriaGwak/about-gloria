@@ -13,21 +13,14 @@ module.exports = {
       xl: "1400px",
     },
     extend: {
-      backgroundColor: theme => ({
-        ...theme('colors'),
-        'charcoal': '#23424a',
-        'gray': '#ececeb',
-        'mistyBlue': '#bfd2d0',
-        'ivory': '#f4f7f0'
-      }),
-      textColor: theme => ({
-        ...theme('colors'),
-        'charcoal': '#23424a',
-        'gray': '#ececeb',
-        'mistyBlue': '#bfd2d0',
-        'ivory': '#f4f7f0'
-      })
-    },
+      colors: {
+        charcoal: '#23424a',
+        gray: '#ececeb',
+        mistyBlue: '#bfd2d0',
+        ivory: '#f4f7f0',
+        tealGreen: '#368980',
+      },
+    }    
   },
   plugins: [],
 }
