@@ -12,7 +12,12 @@ export default function Form() {
         handleSubmit,
         formState: { errors },
     } = useForm({
-        mode: 'onSubmit'  // validation only on form submission
+        mode: 'onBlur',  // validation only on form submission
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+        }
     });
 
     const onSubmit = async (data) => {
@@ -52,9 +57,15 @@ export default function Form() {
                 <Input 
                     name={'name'} 
                     type={'text'} 
-                    placeholder={'Enter name'} 
+                    placeholder={'Enter your name'} 
                     register={register}
-                    {...register('name', { required: 'Name is required.' })}
+                    {...register('name', {
+                        required: 'Name is required.',
+                        pattern: {
+                            value: /^[A-Za-z가-힣\s]+$/,
+                            message: 'Name can only include letters and Korean characters.',
+                        },
+                    })}
                     errors={errors}
                 />
                 <Input 
@@ -62,9 +73,12 @@ export default function Form() {
                     type={'email'} 
                     placeholder={'Enter email'} 
                     register={register}
-                    {...register('email', { 
-                        required: 'Email is required.', 
-                        pattern: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i 
+                    {...register('email', {
+                        required: 'Email is required.',
+                        pattern: {
+                            value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
+                            message: 'Invalid email format.',
+                        },
                     })}
                     errors={errors}
                 />
@@ -73,7 +87,9 @@ export default function Form() {
                     type={'textarea'} 
                     placeholder={'Enter message'} 
                     register={register}
-                    {...register('message', { required: 'Message is required.' })}
+                    {...register('message', {
+                        required: 'Message is required.',
+                    })}
                     errors={errors}
                 />
                 <div className='md:mt-8 mt-10'>

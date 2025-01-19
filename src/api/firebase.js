@@ -59,12 +59,14 @@ export async function getCareers (){
 
 export async function makeInquirie(inquirie){
     const id = uuid();
+    const timestamp = new Date().toISOString();
     
     return set(ref(database, `inquiries/${uuid()}`), {
         ...inquirie,
         id,
         name: inquirie.name,
         email: inquirie.email,
-        message: inquirie.message
+        message: inquirie.message,
+        date: timestamp
     });
 }

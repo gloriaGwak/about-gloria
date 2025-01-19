@@ -46,7 +46,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                                 md:w-[35px] md:h-[35px]
                                 w-[30px] h-[30px]
                             '>
-                                <Link to='/' target='_blank' title='Go to new window' className='block w-full h-full'>
+                                <Link to='https://github.com/gloriaGwak' target='_blank' title='Go to new window' className='block w-full h-full'>
                                     <TbBrandGithubFilled className='w-full h-full' /><span className='blind'>GitHub</span>
                                 </Link>
                             </li>
@@ -54,7 +54,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                                 md:w-[35px] md:h-[35px]
                                 w-[30px] h-[30px]
                             '>
-                                <Link to='/' target='_blank' title='Go to new window' className='block w-full h-full'>
+                                <Link to='https://www.linkedin.com/in/gloria-gwak-803667236' target='_blank' title='Go to new window' className='block w-full h-full'>
                                     <TbBrandLinkedinFilled className='w-full h-full' /><span className='blind'>LinkedIn</span>
                                 </Link>
                             </li>
