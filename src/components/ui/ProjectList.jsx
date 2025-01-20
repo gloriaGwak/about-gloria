@@ -7,7 +7,8 @@ import ProjectCard from './ProjectCard';
 
 export default function ProjectList({filter}) {
     const location = useLocation();
-    const { isLoading, error, data: projects } = useQuery({
+    // const { isLoading, error, data: projects } = useQuery({
+    const { data: projects } = useQuery({
         queryKey: ['project'],
         queryFn: getProjects,
         // staleTime: 1000 * 60 *5
