@@ -22,12 +22,12 @@ export default function Header({sectionRefs, currentSection, path}) {
             {path !== '/projects' && (
                 <>
                     <div>
-                        <h1 className='font-bangers font-bold md:text-5xl text-4xl tracking-wider'>
+                        <h1 className='font-bangers font-extrabold md:text-5xl text-4xl tracking-wide'>
                             <Link to='/'>Gloria Gwak</Link>
                         </h1>
                         <h2 className='
                             md:mt-3 md:text-xl text-lg
-                            font-medium mt-2 
+                            font-semibold mt-2 
                             text-balance
                         '>
                             Frontend Developer | UI Developer
@@ -81,7 +81,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                                     className={`
                                         py-2 text-center text-sm
                                         lg:mt-1 first:mt-0 text-lg lg:text-left lg:text-base lg:p-0
-                                        ${currentSection === value && 'font-bold'}
+                                        ${currentSection === value && 'font-semibold'}
                                     `}
                                 >
                                     <button 

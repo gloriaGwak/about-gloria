@@ -24,12 +24,12 @@ export default function SectionProjects({ref}) {
                 mt-8
             '>
                 <Link to='/projects' title='Go to all project list' className='
-                    group inline-flex items-center font-medium leading-tight 
+                    group inline-flex items-center font-semibold leading-tight 
                     hover:text-tealGreen
                 '>  
                     <span className='
                         border-b border-transparent
-                        font-bold text-lg
+                        text-lg
                         md:text-xl
                         group-hover:border-tealGreen
                     '>

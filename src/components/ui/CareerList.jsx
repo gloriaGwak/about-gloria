@@ -33,7 +33,7 @@ export default function CareerList({filter}) {
                             lg:w-[calc(100%-140px-1rem)]
                             w-full
                         '>
-                            <strong className="inline-block align-middle text-[0]">
+                            <strong className="inline-block align-middle font-semibold text-[0]">
                                 <span className="inline-block align-middle text-base"> 
                                     {career.category === "education" && (
                                         <PiCertificate className="inline-block w-[22px] h-[22px] mr-1" />

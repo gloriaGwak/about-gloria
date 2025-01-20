@@ -21,6 +21,7 @@ export default function ProjectContent({project}) {
             '>
                 <div> 
                     <strong className='
+                        font-bold
                         md:text-xl
                         text-lg
                     '>

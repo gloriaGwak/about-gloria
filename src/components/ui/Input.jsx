@@ -2,7 +2,7 @@ export default function Input({ name, type, placeholder, errors, register, ...re
     return (
         <>
             <label htmlFor={name} className="block mt-4 first:mt-0">
-                <span className="block capitalize mb-1 text-medium text-base md:text-lg">
+                <span className="block capitalize mb-1 font-medium text-base md:text-lg">
                     {name}
                 </span>
                 {type === 'textarea' ? (

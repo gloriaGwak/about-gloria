@@ -7,7 +7,7 @@ export default function CareerFilter({filters, filter, onFilterChange}) {
             {filters.map((value, index) => 
                 <li key={index}>
                     <button
-                        className={`capitalize text-opacity-70 ${filter === value && 'font-bold underline'}`}
+                        className={`capitalize text-opacity-70 ${filter === value && 'font-semibold underline'}`}
                         type='button'
                         onClick={() => onFilterChange(value)}
                     >{value}</button>

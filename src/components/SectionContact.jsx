@@ -21,7 +21,7 @@ export default function SectionContact({ref}) {
                 '>
                     Let's Work Together
                 </strong>
-                <span className='block'>
+                <span className='block md:mt-2 mt-1'>
                     I'm always excited to collaborate on new projects and help others improve their project. Feel free to reach out, and let's create something amazing together!
                 </span>
             </p>
