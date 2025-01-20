@@ -3,7 +3,7 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, get, set, ref } from "firebase/database"; 
 import { v4 as uuid } from 'uuid';
 import { emailSend } from "./emailjs";
-import { logCustomEvent } from "./ga";
+// import { logCustomEvent } from "./ga";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

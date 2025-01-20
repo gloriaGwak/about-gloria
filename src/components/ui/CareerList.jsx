@@ -5,7 +5,7 @@ import { getCareers } from '../../api/firebase';
 
 
 export default function CareerList({filter}) {
-    const { isLoading, error, data: careers } = useQuery({
+    const { data: careers } = useQuery({
         queryKey: ['career'],
         queryFn: getCareers,
         // staleTime: 1000 * 60 *5
