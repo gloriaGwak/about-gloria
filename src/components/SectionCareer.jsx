@@ -14,7 +14,7 @@ export default function SectionCareer({ref}) {
             className='pt-16 lg:pt-24'
         >
             <SectionTitle text={'Career Background'} />
-            <Filter filters={filters} filter={filter} onFilterChange={setFilter} />
+            <Filter filters={filters} filter={filter} onFilterChange={setFilter} category={'SectionCareer'} />
             <CareerList filter={filter} />
         </section>
     );

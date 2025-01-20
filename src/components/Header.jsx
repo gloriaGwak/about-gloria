@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TbBrandGithubFilled, TbBrandLinkedinFilled } from "react-icons/tb";
+import { logCustomEvent, analytics } from '../api/firebase';
 
 
 const navList = ['about', 'projects', 'background', 'contact'];
@@ -16,14 +17,19 @@ export default function Header({sectionRefs, currentSection, path}) {
     
     useEffect(() => {
     }, [active]);
-
+    
     return (
         <header className={`${path !== '/projects' ? 'block flex flex-wrap lg:flex-col lg:justify-between lg:w-[35%] lg:h-[100vh] lg:py-24 lg:sticky top-0 left-0 relative pt-20' : 'hidden'}`}>
             {path !== '/projects' && (
                 <>
                     <div>
                         <h1 className='font-bangers font-extrabold md:text-5xl text-4xl tracking-wide'>
-                            <Link to='/'>Gloria Gwak</Link>
+                            <Link 
+                                onClick={() => {logCustomEvent(analytics, 'btn_logo', { 'event_category': 'Header', 'event_type':'click' });}} 
+                                to='/'
+                            >
+                                Gloria Gwak
+                            </Link>
                         </h1>
                         <h2 className='
                             md:mt-3 md:text-xl text-lg
@@ -46,7 +52,11 @@ export default function Header({sectionRefs, currentSection, path}) {
                                 md:w-[35px] md:h-[35px]
                                 w-[35px] h-[35px]
                             '>
-                                <Link to='https://github.com/gloriaGwak' target='_blank' title='Go to new window' className='block w-full h-full'>
+                                <Link 
+                                    onClick={() => logCustomEvent(analytics, 'btn_GitHub', { 'event_category': 'Header', 'event_type':'click' })}
+                                    to='https://github.com/gloriaGwak' target='_blank' title='Go to new window' 
+                                    className='block w-full h-full
+                                '>
                                     <TbBrandGithubFilled className='w-full h-full' /><span className='blind'>GitHub</span>
                                 </Link>
                             </li>
@@ -54,7 +64,11 @@ export default function Header({sectionRefs, currentSection, path}) {
                                 md:w-[35px] md:h-[35px]
                                 w-[35px] h-[35px]
                             '>
-                                <Link to='https://www.linkedin.com/in/gloria-gwak-803667236' target='_blank' title='Go to new window' className='block w-full h-full'>
+                                <Link 
+                                    onClick={() => logCustomEvent(analytics, 'btn_LinkedIn', { 'event_category': 'Header', 'event_type':'click' })}
+                                    to='https://www.linkedin.com/in/gloria-gwak-803667236' target='_blank' title='Go to new window' 
+                                    className='block w-full h-full
+                                '>
                                     <TbBrandLinkedinFilled className='w-full h-full' /><span className='blind'>LinkedIn</span>
                                 </Link>
                             </li>
@@ -77,7 +91,10 @@ export default function Header({sectionRefs, currentSection, path}) {
                             {navList.map((value, index) => 
                                 <li 
                                     key={value}
-                                    onClick={() => scrollToSection(value,index)}
+                                    onClick={() => {
+                                        scrollToSection(value, index);
+                                        logCustomEvent(analytics, `nav_${value}`, { 'event_category': 'Header', 'event_type':'click' });
+                                    }}
                                     className={`
                                         py-2 text-center text-sm
                                         lg:mt-1 first:mt-0 text-lg lg:text-left lg:text-base lg:p-0

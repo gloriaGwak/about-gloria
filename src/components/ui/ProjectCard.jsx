@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectContent from './ProjectContent';
+import { logCustomEvent, analytics } from '../../api/firebase';
 
 
 export default function ProjectCard({project, path}) {
@@ -57,7 +58,9 @@ export default function ProjectCard({project, path}) {
                 <li className={`mt-14 first:mt-0 lg:mt-8 ${!project.url ? 'flex gap-4 items-stretch flex-wrap rounded lg:border lg:border-mistyBlue lg:p-8' : 'duration-200 lg:hover:shadow-2xl'}
                 `}>                    
                     {project.url ? (
-                        <Link to={project.url} target='_balnk' title='Go to new window' className='
+                        <Link 
+                        onClick={() => {logCustomEvent(analytics, `${project.category}_${project.title}`, { 'event_category': 'AllProjects', 'event_type':'click' });}} 
+                        to={project.url} target='_balnk' title='Go to new window' className='
                             lg:border lg:border-mistyBlue lg:p-8 rounded
                             group
                             relative

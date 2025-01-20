@@ -4,6 +4,7 @@ import SectionTitle from './ui/SectionTitle';
 import Filter from './ui/Filter';
 import ProjectList from './ui/ProjectList';
 import { IoArrowForwardOutline } from "react-icons/io5";
+import { logCustomEvent, analytics } from '../api/firebase';
 
 
 const filters = ['all', 'Personal', 'Professional'];
@@ -17,13 +18,15 @@ export default function SectionProjects({ref}) {
             className='pt-16 lg:pt-24'
         >
             <SectionTitle text={'Projects'} />
-            <Filter filters={filters} filter={filter} onFilterChange={setFilter} />
+            <Filter filters={filters} filter={filter} onFilterChange={setFilter} category={'SectionProjects'} />
             <ProjectList filter={filter} />
             <div className='
                 lg:mt-10
                 mt-8
             '>
-                <Link to='/projects' title='Go to all project list' className='
+                <Link 
+                    onClick={() => {logCustomEvent(analytics, 'btn_AllProjects', { 'event_category': 'SectionProjects', 'event_type':'click' });}}
+                    to='/projects' title='Go to all project list' className='
                     group inline-flex items-center font-semibold leading-tight 
                     hover:text-tealGreen
                 '>  

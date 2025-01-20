@@ -4,6 +4,7 @@ import SectionTitle from './ui/SectionTitle';
 import Filter from './ui/Filter';
 import ProjectList from './ui/ProjectList';
 import { IoArrowBackOutline } from "react-icons/io5";
+import { logCustomEvent, analytics } from '../api/firebase';
 
 
 const filters = ['all', 'Personal', 'Professional'];
@@ -19,9 +20,12 @@ export default function Project() {
             className='py-16 lg:py-28'
         >
             <h1 className='mb-4 font-bangers font-bold md:text-lg text-xl tracking-wide'>
-                <Link to='/' title='Back to home' className='
-                    inline-block group
-                    hover:text-tealGreen
+                <Link
+                    onClick={() => {logCustomEvent(analytics, 'btn_GoToHome', { 'event_category': 'AllProjects', 'event_type':'click' });}} 
+                    to='/' title='Back to home' 
+                    className='
+                        inline-block group
+                        hover:text-tealGreen
                 '>
                     <IoArrowBackOutline className='
                         inline-block
@@ -39,7 +43,7 @@ export default function Project() {
                 </Link>
             </h1>
             <SectionTitle text={'All Projects'} />
-            <Filter filters={filters} filter={filter} onFilterChange={setFilter} />
+            <Filter filters={filters} filter={filter} onFilterChange={setFilter} category={'AllProjects'} />
             <ProjectList filter={filter} />
         </section>
     );

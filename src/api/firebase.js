@@ -3,7 +3,6 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, get, set, ref } from "firebase/database"; 
 import { v4 as uuid } from 'uuid';
 import { emailSend } from "./emailjs";
-// import { logCustomEvent } from "./ga";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,8 +18,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const database = getDatabase();
+export const analytics = getAnalytics(app);
 
 export async function getProjects (){
     try {
@@ -59,10 +58,7 @@ export async function makeInquirie(inquirie){
     );
     
     emailSend(inquirie, userTime);
-    logEvent(analytics, "form_submission", {
-        form_name: "Contact me",
-        success: true,
-    });
+
     return set(ref(database, `inquiries/${uuid()}`), {
         ...inquirie,
         id,
@@ -73,17 +69,44 @@ export async function makeInquirie(inquirie){
     });
 }
 
-export function handleClickLogEvent(target,section,time) {
-    logEvent(analytics, "button_click", {
-        target,
-        section, 
-        time
-    });
-};
-
 // export function handleExitIntent() {
 //     logCustomEvent(analytics, "exit_intent", {
 //         page: window.location.pathname,
 //         timestamp: new Date().toISOString(),
 //     });
 // }
+
+
+/**
+ * Firebase Analytics에 커스텀 이벤트를 로깅하는 함수.
+ *
+ * @param {string} eventName - event name (e.g. "button_click").
+ * @param {object} params - parameter in event (e.g. { target, section, time }).
+ * @param {object} analytics - Firebase analytics instance.
+ */
+export function logCustomEvent(analytics, eventName, params = {}) {
+    if (!analytics) {
+        console.error("undefined Analytics Object");
+        return;
+    }
+
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const timestamp = new Date();
+    const userTime = new Date(
+        timestamp.toLocaleString("en-US", { timeZone: userTimeZone })
+    );
+
+    const clickTime = userTime.toISOString();
+
+    // add click time in params
+    params = {
+        ...params,
+        clickTime
+    };
+    try {
+        logEvent(analytics, eventName, params);
+        // console.log(`successed event logging: ${eventName}`, params);
+    } catch (error) {
+        // console.error(`failed event logging: ${eventName}`, error);
+    }
+}

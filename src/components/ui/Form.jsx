@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Input from './Input';
 import { LuSend } from "react-icons/lu";
 import { useForm } from 'react-hook-form';
-import { makeInquirie } from '../../api/firebase';
+import { makeInquirie, logCustomEvent, analytics } from '../../api/firebase';
 
 export default function Form() {
     const {
@@ -23,7 +23,8 @@ export default function Form() {
     const onSubmit = async (data) => {
         try {
             await makeInquirie(data); // send data
-    
+            logCustomEvent(analytics, 'btn_submit', { 'event_category': 'SectionContact', 'event_type':'submit' });
+
             toast.success('Thanks for getting in touch! I will contact you as soon as possible.', {
                 position: "bottom-center",
                 autoClose: 2500,
