@@ -22,7 +22,7 @@ export default function Header({sectionRefs, currentSection, path}) {
             {path !== '/projects' && (
                 <>
                     <div>
-                        <h1 className='font-bangers font-bold md:text-5xl text-4xl'>
+                        <h1 className='font-bangers font-bold md:text-5xl text-4xl tracking-wide'>
                             <Link to='/'>Gloria Gwak</Link>
                         </h1>
                         <h2 className='
@@ -44,7 +44,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                         '>
                             <li className='
                                 md:w-[35px] md:h-[35px]
-                                w-[30px] h-[30px]
+                                w-[35px] h-[35px]
                             '>
                                 <Link to='https://github.com/gloriaGwak' target='_blank' title='Go to new window' className='block w-full h-full'>
                                     <TbBrandGithubFilled className='w-full h-full' /><span className='blind'>GitHub</span>
@@ -52,7 +52,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                             </li>
                             <li className='
                                 md:w-[35px] md:h-[35px]
-                                w-[30px] h-[30px]
+                                w-[35px] h-[35px]
                             '>
                                 <Link to='https://www.linkedin.com/in/gloria-gwak-803667236' target='_blank' title='Go to new window' className='block w-full h-full'>
                                     <TbBrandLinkedinFilled className='w-full h-full' /><span className='blind'>LinkedIn</span>
