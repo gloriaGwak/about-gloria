@@ -10,7 +10,7 @@ export default function Main() {
 
     return (
         <main className='
-            lg:w-[calc(60%-1rem)] lg:pb-24
+            lg:w-[calc(65%-1rem)] lg:pb-24
             pb-16 w-full
             
         '>

@@ -18,7 +18,7 @@ export default function Header({sectionRefs, currentSection, path}) {
     }, [active]);
 
     return (
-        <header className={`${path !== '/projects' ? 'block flex flex-wrap lg:flex-col lg:justify-between lg:w-[40%] lg:h-[100vh] lg:py-24 lg:sticky top-0 left-0 relative pt-20' : 'hidden'}`}>
+        <header className={`${path !== '/projects' ? 'block flex flex-wrap lg:flex-col lg:justify-between lg:w-[35%] lg:h-[100vh] lg:py-24 lg:sticky top-0 left-0 relative pt-20' : 'hidden'}`}>
             {path !== '/projects' && (
                 <>
                     <div>
@@ -60,10 +60,6 @@ export default function Header({sectionRefs, currentSection, path}) {
                             </li>
                         </ul>
                     </div>
-                    {/* <nav className='
-                        lg:block
-                        hidden
-                    '> */}
                     <nav className='
                         lg:relative
                         fixed top-0 left-0 w-full
@@ -94,23 +90,12 @@ export default function Header({sectionRefs, currentSection, path}) {
                                     >
                                         {value}
                                     </button>
-                                    {/* <HashLink 
-                                        className={`capitalize ${active === value && 'font-bold'}`}
-                                        // onClick={() => handleActive(value)}
-                                        to={`#${value}`} 
-                                        smooth
-                                    >
-                                            {value}
-                                    </HashLink> */}
                                 </li>
                             )}
                         </ul>
                     </nav>
                 </>
             )}
-            {/* {path == '/projects' && (
-                <Link to='/'>Go to Home</Link>
-            )} */}
         </header>
     );
 }

@@ -56,9 +56,6 @@ body {
   line-height: 1.5rem;
   background: #ececeb;
   @apply bg-gray text-charcoal;
-  /* @apply min-w-[300px];
-  @apply flex flex-col items-center;
-  @apply bg-white text-gray-700; */
 }
 
 code, kbd, samp, pre {
@@ -74,8 +71,15 @@ code, kbd, samp, pre {
 #root{
   @apply w-full max-w-full;
 }
+/* charcoal: '#23424a',
+gray: '#ececeb',
+mistyBlue: '#bfd2d0',
+ivory: '#f4f7f0',
+tealGreen: '#368980', */
 :root {
-  /* --toastify-color-success: #24b0ba; */
+  --toastify-color-success: #bfd2d0;
+  --toastify-text-color-light: #23424a;
+  /* --toastify-color-progress-light: #368980; */
   /* --toastify-color-warning: #f1c40f;
   --toastify-color-error: hsl(6, 78%, 57%);
   --toastify-color-transparent: rgba(255, 255, 255, 0.7);
@@ -111,7 +115,6 @@ code, kbd, samp, pre {
 
   /* --toastify-spinner-color: #616161;
   --toastify-spinner-color-empty-area: #e0e0e0;
-  --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
   --toastify-color-progress-dark: #bb86fc;
   --toastify-color-progress-info: var(--toastify-color-info);
   --toastify-color-progress-success: var(--toastify-color-success);
@@ -119,6 +122,13 @@ code, kbd, samp, pre {
   --toastify-color-progress-error: var(--toastify-color-error); */
   /* used to control the opacity of the progress trail */
   /* --toastify-color-progress-bgo: 0.2; */
+}
+
+.Toastify__progress-bar--success{
+  @apply bg-tealGreen;
+}
+.Toastify__close-button--light{
+  @apply text-tealGreen opacity-50;
 }
 
 ::-webkit-scrollbar{

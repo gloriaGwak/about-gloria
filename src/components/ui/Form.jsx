@@ -6,10 +6,10 @@ import { useForm } from 'react-hook-form';
 import { makeInquirie } from '../../api/firebase';
 
 export default function Form() {
-    const [success, setSuccess] = useState(false);
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm({
         mode: 'onBlur',  // validation only on form submission
@@ -21,32 +21,27 @@ export default function Form() {
     });
 
     const onSubmit = async (data) => {
-        // console.log('Form submitted:', data);  // check form data
-        const tt = toast.loading("Sending...");
-    
         try {
             await makeInquirie(data); // send data
     
-            toast.update(tt, { 
-                render: "You made an inquiry successfully!", 
-                type: "success", 
-                isLoading: false, 
-                autoClose: 3000 
+            toast.success('Thanks for getting in touch! I will contact you as soon as possible.', {
+                position: "bottom-center",
+                autoClose: 2500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
             });
-            setSuccess(true);
-    
+            
+             // form reset after success
             setTimeout(() => {
-                setSuccess(false);
-                window.location.reload(); // reload after success
-            }, 3000);
+                reset();
+            }, 3100);
+            
         } catch (error) {
             console.error(error);  // error log
-            toast.update(tt, { 
-                render: "Error uploading inquiry", 
-                type: "error", 
-                isLoading: false, 
-                autoClose: 3000 
-            });
         }
     };
 

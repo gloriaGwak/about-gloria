@@ -27,6 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@emailjs/browser", "npm:4.4.1"],\
           ["@firebase/app", "npm:0.10.17"],\
           ["@tanstack/react-query", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:5.64.0"],\
           ["@testing-library/jest-dom", "npm:5.17.0"],\
@@ -3456,6 +3457,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/postcss-selector-parser",\
           "postcss-selector-parser"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@emailjs/browser", [\
+      ["npm:4.4.1", {\
+        "packageLocation": "../../../C:/Users/yuyu0/AppData/Local/Yarn/Berry/cache/@emailjs-browser-npm-4.4.1-64a2cb04f8-10c0.zip/node_modules/@emailjs/browser/",\
+        "packageDependencies": [\
+          ["@emailjs/browser", "npm:4.4.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13817,6 +13827,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["my-portfolio", "workspace:."],\
+          ["@emailjs/browser", "npm:4.4.1"],\
           ["@firebase/app", "npm:0.10.17"],\
           ["@tanstack/react-query", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:5.64.0"],\
           ["@testing-library/jest-dom", "npm:5.17.0"],\

@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { getDatabase, get, set, ref } from "firebase/database"; 
 import { v4 as uuid } from 'uuid';
-
+import { emailSend } from "./emailjs";
+import { logCustomEvent } from "./ga";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,20 +16,12 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase();
 
-// export async function getProducts(){
-//     return get(ref(database, 'products'))
-//     .then((snapshot) => {
-//         if(snapshot.exists()){
-//             return Object.values(snapshot.val());
-//         }
-//         return [];
-//     })
-// }
 export async function getProjects (){
     try {
         const snapshot = await get(ref(database, 'projects'));
@@ -59,14 +52,38 @@ export async function getCareers (){
 
 export async function makeInquirie(inquirie){
     const id = uuid();
-    const timestamp = new Date().toISOString();
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const timestamp = new Date();
+    const userTime = new Date(
+        timestamp.toLocaleString("en-US", { timeZone: userTimeZone })
+    );
     
+    emailSend(inquirie, userTime);
+    logEvent(analytics, "form_submission", {
+        form_name: "Contact me",
+        success: true,
+    });
     return set(ref(database, `inquiries/${uuid()}`), {
         ...inquirie,
         id,
         name: inquirie.name,
         email: inquirie.email,
         message: inquirie.message,
-        date: timestamp
+        date: userTime
     });
 }
+
+export function handleClickLogEvent(target,section,time) {
+    logEvent(analytics, "button_click", {
+        target,
+        section, 
+        time
+    });
+};
+
+// export function handleExitIntent() {
+//     logCustomEvent(analytics, "exit_intent", {
+//         page: window.location.pathname,
+//         timestamp: new Date().toISOString(),
+//     });
+// }
