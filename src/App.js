@@ -12,7 +12,6 @@ export default function App() {
   const sectionRefs = useRef([]);
   const [currentSection, setCurrentSection] = useState('about');
   const location = useLocation();
-  const path = location.pathname;
 
   const handleScrollToTop = () => {
     window.scrollTo({top: 0});
@@ -48,10 +47,10 @@ export default function App() {
   }, [location.pathname]);
   return (
     <QueryClientProvider client={queryClient}>
-      <div className={`wrap lg:px-6 md:px-12 px-6 ${path !== '/projects' ? 'flex lg:justify-between lg:gap-4 lg:flex-row flex-col flex-wrap' : 'block'}`}>
-        <Header sectionRefs={sectionRefs} currentSection={currentSection} path={path} />
-        <Outlet context={{ sectionRefs }} path={path} />
-        <Footer path={path} />
+      <div className={`wrap lg:px-6 md:px-12 px-6 ${location.pathname !== '/projects' ? 'flex lg:justify-between lg:gap-4 lg:flex-row flex-col flex-wrap' : 'block'}`}>
+        <Header sectionRefs={sectionRefs} currentSection={currentSection} path={location.pathname} />
+        <Outlet context={{ sectionRefs }} path={location.pathname} />
+        <Footer path={location.pathname} />
       </div>
     </QueryClientProvider>
   );
