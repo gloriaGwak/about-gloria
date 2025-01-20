@@ -73,7 +73,7 @@ export default function ProjectContent({project}) {
                     <dd>
                         <ul className='flex gap-2 flex-wrap'>
                         {project.stack.map((stack, idx) => (
-                            <li key={idx} className="px-2 border border-[#23424a] rounded-xl">{stack}</li>
+                            <li key={idx} className="px-2 rounded-xl bg-charcoal text-ivory">{stack}</li>
                         ))}
                         </ul>
                     </dd>

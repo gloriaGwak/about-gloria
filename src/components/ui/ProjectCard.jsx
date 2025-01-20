@@ -9,10 +9,9 @@ export default function ProjectCard({project, path}) {
             {path !== '/projects' ? (
                 project.show && (
                     <li className='
-                        flex gap-2 mt-12 items-stretch first:mt-0 flex-wrap
+                        flex gap-2 mt-12 items-center first:mt-0 flex-wrap
                         md:flex-nowrap md:gap-4 md:mt-8
                     '>
-                        {/* <ProjectContent project={project} /> */}
                         <div className='
                             md:w-[35%]
                             w-full
@@ -24,6 +23,7 @@ export default function ProjectCard({project, path}) {
                             />
                         </div>
                         <div className='
+                            flex flex-col justify-between
                             md:w-[calc(65%-1rem)]
                             w-full
                         '>
@@ -45,7 +45,7 @@ export default function ProjectCard({project, path}) {
                                 <dd>
                                     <ul className='flex gap-1 flex-wrap'>
                                     {project.stack.map((stack, idx) => (
-                                        <li key={idx} className="px-2 border border-charcoal rounded-xl text-sm">{stack}</li>
+                                        <li key={idx} className="px-2 rounded-xl text-sm bg-charcoal text-ivory">{stack}</li>
                                     ))}
                                     </ul>
                                 </dd>

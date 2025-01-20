@@ -22,7 +22,7 @@ export default function Header({sectionRefs, currentSection, path}) {
             {path !== '/projects' && (
                 <>
                     <div>
-                        <h1 className='font-bangers font-bold md:text-5xl text-4xl tracking-wide'>
+                        <h1 className='font-bangers font-bold md:text-5xl text-4xl tracking-wider'>
                             <Link to='/'>Gloria Gwak</Link>
                         </h1>
                         <h2 className='
