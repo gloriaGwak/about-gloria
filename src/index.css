@@ -3,6 +3,7 @@
 @tailwind utilities;
 @tailwind forms;
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import "@fontsource/pretendard";
 
 /* html.dark body{
   @apply bg-zinc-800 text-gray-50;
@@ -47,7 +48,7 @@ Teal
 
 body {
   margin: 0;
-  font-family: 'Pretendard', 'sans-serif';
+  font-family: 'Pretendard', 'NotoSans', sans-serif, Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -59,7 +60,7 @@ body {
 }
 
 code, kbd, samp, pre {
-  font-family: 'Pretendard', 'sans-serif';
+  font-family: 'Pretendard', 'NotoSans', sans-serif, Helvetica;
 }
 
 .bangers-regular {

@@ -29,6 +29,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@emailjs/browser", "npm:4.4.1"],\
           ["@firebase/app", "npm:0.10.17"],\
+          ["@fontsource/pretendard", "npm:5.1.0"],\
           ["@tanstack/react-query", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:5.64.0"],\
           ["@testing-library/jest-dom", "npm:5.17.0"],\
           ["@testing-library/react", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:13.4.0"],\
@@ -4616,6 +4617,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../C:/Users/yuyu0/AppData/Local/Yarn/Berry/cache/@firebase-webchannel-wrapper-npm-1.0.3-0df25ee562-10c0.zip/node_modules/@firebase/webchannel-wrapper/",\
         "packageDependencies": [\
           ["@firebase/webchannel-wrapper", "npm:1.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@fontsource/pretendard", [\
+      ["npm:5.1.0", {\
+        "packageLocation": "../../../C:/Users/yuyu0/AppData/Local/Yarn/Berry/cache/@fontsource-pretendard-npm-5.1.0-7e96446750-10c0.zip/node_modules/@fontsource/pretendard/",\
+        "packageDependencies": [\
+          ["@fontsource/pretendard", "npm:5.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13829,6 +13839,7 @@ const RAW_RUNTIME_STATE =
           ["my-portfolio", "workspace:."],\
           ["@emailjs/browser", "npm:4.4.1"],\
           ["@firebase/app", "npm:0.10.17"],\
+          ["@fontsource/pretendard", "npm:5.1.0"],\
           ["@tanstack/react-query", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:5.64.0"],\
           ["@testing-library/jest-dom", "npm:5.17.0"],\
           ["@testing-library/react", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:13.4.0"],\

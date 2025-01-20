@@ -2328,6 +2328,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/pretendard@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource/pretendard@npm:5.1.0"
+  checksum: 10c0/d6c3f5a74afa9e8027884049bd0dc450d537c5d118ed333365d6bee3b090cbf3fa6222a74f3f58f167e4e5a46fbe479ee9635239352b31352da2738372f6cb37
+  languageName: node
+  linkType: hard
+
 "@grpc/grpc-js@npm:~1.9.0":
   version: 1.9.15
   resolution: "@grpc/grpc-js@npm:1.9.15"
@@ -9994,6 +10001,7 @@ __metadata:
   dependencies:
     "@emailjs/browser": "npm:^4.4.1"
     "@firebase/app": "npm:^0.10.17"
+    "@fontsource/pretendard": "npm:^5.1.0"
     "@tanstack/react-query": "npm:^5.64.0"
     "@testing-library/jest-dom": "npm:^5.14.1"
     "@testing-library/react": "npm:^13.0.0"
