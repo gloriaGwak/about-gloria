@@ -45,7 +45,7 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
     };
     
-  }, []);
+  }, [location.pathname]);
   return (
     <QueryClientProvider client={queryClient}>
       <div className={`wrap lg:px-6 md:px-12 px-6 ${path !== '/projects' ? 'flex lg:justify-between lg:gap-4 lg:flex-row flex-col flex-wrap' : 'block'}`}>
