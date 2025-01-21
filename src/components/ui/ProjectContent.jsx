@@ -39,15 +39,15 @@ export default function ProjectContent({project}) {
                         md:mt-4
                         mt-2
                     '>
-                        <p className='
-                            
-                        '>
+                        <p>
                             {project.description}
                         </p>
                         {project.features &&(
-                            <dl>
+                            <dl className='
+                                md:mt-4
+                                mt-2
+                            '>
                                 <dt className='
-                                    mt-2
                                     font-bold
                                 '>
                                     Features
@@ -55,6 +55,31 @@ export default function ProjectContent({project}) {
                                 <dd>
                                     <ul className=''>
                                     {project.features.map((value, idx) => (
+                                        <li key={idx} className='
+                                            indent-[-0.5rem]
+                                            pl-[1rem]
+                                        '>
+                                            <span className="inline-block leading-[0] mr-2 align-middle md:text-base md:mr-2">&#183;</span>
+                                            {value}
+                                        </li>
+                                    ))}
+                                    </ul>
+                                </dd>
+                            </dl>
+                        )}
+                        {project.result &&(
+                            <dl className='
+                                md:mt-4
+                                mt-2
+                            '>
+                                <dt className='
+                                    font-bold
+                                '>
+                                    Result
+                                </dt>
+                                <dd>
+                                    <ul className=''>
+                                    {project.result.map((value, idx) => (
                                         <li key={idx} className='
                                             indent-[-0.5rem]
                                             pl-[1rem]
