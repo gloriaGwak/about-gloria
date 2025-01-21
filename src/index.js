@@ -7,7 +7,14 @@ import reportWebVitals from './reportWebVitals';
 import NotFound from './components/NotFound';
 import Project from './components/Project';
 import Main from './components/Main';
+import { trackPageView, trackUTMParams } from './utils/gtag';
 
+
+// tracking page view
+trackPageView();
+
+// tracking URL parameters
+trackUTMParams();
 
 const router = createBrowserRouter([
   {
