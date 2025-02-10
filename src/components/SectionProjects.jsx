@@ -19,10 +19,10 @@ export default function SectionProjects({ref}) {
         >
             <SectionTitle text={'Projects'} />
             <Filter filters={filters} filter={filter} onFilterChange={setFilter} category={'SectionProjects'} />
-            <ProjectList filter={filter} />
             <div className='
-                lg:mt-10
-                mt-8
+                lg:my-4
+                my-2
+                text-right
             '>
                 <Link 
                     onClick={() => {logCustomEvent(analytics, 'btn_AllProjects', { 'event_category': 'SectionProjects', 'event_type':'click' });}}
@@ -47,6 +47,7 @@ export default function SectionProjects({ref}) {
                     '/>
                 </Link>
             </div>
+            <ProjectList filter={filter} />
         </section>
         
     );

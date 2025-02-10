@@ -76,7 +76,7 @@ export default function Header({sectionRefs, currentSection, path}) {
                     </div>
                     <nav className='
                         lg:relative
-                        fixed top-0 left-0 w-full
+                        fixed top-0 left-0 w-full z-10
                     '>
                         <ul className='
                             lg:block
