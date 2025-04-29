@@ -11,8 +11,8 @@ export default function ProjectCard({project, path}) {
             {path !== '/projects' ? (
                 project.show && (
                     <li className='
-                        rounded group
-                        flex gap-2 mt-10 items-center first:mt-0 flex-wrap
+                        group
+                        flex gap-2 mt-10 items-center rounded first:mt-0 flex-wrap
                         md:flex-nowrap md:gap-4 md:mt-6 duration-200 lg:hover:shadow-2xl
                     '>
                         <Link 
@@ -75,7 +75,7 @@ export default function ProjectCard({project, path}) {
                     </li>
                 )
             ) : (
-                <li className={`mt-14 first:mt-0 lg:mt-8 ${!project.url ? 'flex gap-4 items-stretch flex-wrap rounded lg:border lg:border-mistyBlue lg:p-8' : 'duration-200 lg:hover:shadow-2xl'}
+                <li className={`rounded mt-14 first:mt-0 lg:mt-8 ${!project.url ? 'flex gap-4 items-stretch flex-wrap lg:border lg:border-mistyBlue lg:p-8' : 'duration-200 lg:hover:shadow-2xl'}
                 `}>                    
                     {project.url ? (
                         <Link 
